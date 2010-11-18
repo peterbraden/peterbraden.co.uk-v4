@@ -21,7 +21,7 @@ function(head, req) {
       } else if (post.format == "textile") {
         var html = textile.encode(post.body);
       } else {
-        var html = Mustache.escape(post.html);
+        var html = post.html;
       }
 
       var stash = {
