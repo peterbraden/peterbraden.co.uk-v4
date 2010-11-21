@@ -12,8 +12,13 @@ function(head, req) {
   
   provides("html", function() {
     // get the first row and make sure it's a post
-    var post = getRow().value;
-    if (post.type != "post") {
+    var post = getRow()
+    if (!post){
+		throw(["error", "not_found", "no post"]); 
+		return;   
+	}
+    post = post.value;
+    if (false) {
       throw(["error", "not_found", "not a post"]);
     } else {
       if (post.format == "markdown") {

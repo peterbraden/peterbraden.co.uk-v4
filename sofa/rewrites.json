@@ -12,6 +12,13 @@
     }
   },
   {
+    "from" : "projects",
+    "to" : "_list/post/post-page",
+    "query" : {
+      "startkey" : ["projects"]
+    }
+  },
+  {
   	"from" : "article/:doc",
   	"to" : "_list/post/post-page",
   	"query" : {
