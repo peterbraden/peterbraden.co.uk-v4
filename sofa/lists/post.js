@@ -32,9 +32,9 @@ function(head, req) {
           commentsFeed : commentsFeed
         },
         scripts : {},
-        title : post.title,
+        title : post.meta.title,
         post_id : post._id,
-        date : post.created_at,
+        date : post.meta.created_at,
         html : html,
         comments : List.withRows(function(row) {
           var v = row.value;

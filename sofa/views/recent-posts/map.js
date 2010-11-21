@@ -1,5 +1,5 @@
 function(doc) {
-  if (doc.type == "post") {
-    emit(new Date(doc.created_at), doc);
+  if (doc.meta.type == "post") {
+    emit(new Date(doc.meta.created_at), doc);
   }
 };

@@ -33,10 +33,10 @@ function(head, req) {
         var post = row.value;
         key = row.key;
         return {
-          title : post.title,
-          author : post.author,
-          date : post.created_at,
-          link : path.list('post','post-page', {startkey : [row.id]}),
+          title : post.meta.title,
+          author : post.meta.author,
+          date : post.meta.created_at,
+          link : "/article/" + row.id,
           has_tags : post.tags ? true : false,
           tags : post.tags && post.tags.map ? post.tags.map(function(tag) {
             var t = tag.toLowerCase();
